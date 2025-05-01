@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MembershipPage</title>
+</head>
+
+<body>
+    <h1>회원가입 페이지</h1>
+
+    <!--회원가입 버튼을 눌렀을 때 views.Create_Member로 id, pw, name, email Post-->
+    <form action="{% url 'main:Create_Member' %}" method="POST">
+        
+        {% csrf_token %}
+        
+        <p>ID<input type="text" name="id"></p>
+        <p>PW<input type="text" name="password"></p>
+        <p>name<input type="text" name="name"></p>
+        <p>email<input type="text" name="email"></p>
+        
+        <!--Create_Member에서 redirect 설정 했으므로 따로 url 설정 X-->
+        <button type="submit">회원가입</button>
+    </form>
+</body>
+
+</html>
